@@ -1,0 +1,118 @@
+                ANGULAR : ADVANCED FRONTEND TECHNOLOGY
+
+       1. Open-source web app framework developed by google,used to build dynamic single page application
+
+       2. Official Website : https://angular.dev/
+
+       3. Angular Installation
+          - Install Angular CLI : npm i -g @angular/cli
+          - To check angular version : ng v
+
+       4. Angular Project Creation : ng new project-name,choose styles sheet and ssr
+          - Run an Angular Project : ng serve / ng s inside angular project , to view angular project in browser open https://localhost:4200/
+
+       5. Angular Project Files & Folder Structure
+          - tsconfig.spec.json , tsconfig.json , tsconfig.app.json : used to TypeScript installation and testing
+          - package.json file : npm configuration file 
+          - package-lock.json : version details of packages installed using npm 
+          - angular.json file : Angular project Configuration file
+          - node_modules Folder : folder is used to hold copies of installed packagesusing npm in your project
+          - public folder : can access by all files inside the projects
+            - src folder : contains all the source code of the project
+            - style.css file : used to style globally
+          - main.ts file : used to initially render angular component in ui/browser of the project,
+             entry point file which bootstrap/render root component (AppComponent) into html page of angular app
+          - index.html file : used to render the application
+          - app folder : full angular app related contents
+            - app.routes.ts file : used to define route for each component in angular app
+            - appconfig.ts file : to enable routing / other features in angular app so that all component can use it.
+            - AppComponent is the root component of angular app,which consist of 4 files (ts,spec.ts,html,css file) are used to display and apply
+              behavior to the contents in browser.
+               - ts file considered as component file
+                 - selector : used to display a component html view in browser, used selector as a tag in html page
+                 - import array : contents in imports array are used in component html page
+                 - templateUrl : url of component html page
+                 - styleUrl : 
+
+       6. Decorators in Angular : contents along with @ symbol is known as Decorators,used to provide metadata(data inside another data)
+
+       7. Components : used to display contents in browser
+            - to create angular components : ng g c component-name - in project terminal
+            
+
+
+
+
+
+
+
+
+            - ngForm Directives : used to get / control properties of form tag
+
+       10. Control Flow Statements : similar to structural Directives, no need to  import control flow Statements to use in components,
+           are used in component html view
+            - @if , @else , @else if
+            - @for
+            - @switch
+
+       11. Pipes : used to convert data to another format, to use pipe in html use pipe character
+           - syntax : dataTobConvetd pipe-character (|) pipe-name [: 'options'] in html elements
+           - Different Pipes
+              - Built in Pipes : date , currency , lowercase , uppercase
+              - Custom Pipes : use command - ng g p pipe-folder/pipe-name,define logic to convert data to another format inside pipe class use
+                transform function.
+
+       12. Service : used to share common logic b/w Different component in an angular app
+           - create service : ng g s service-folder/service-name
+
+       13. Dependency Injection : used to access properties/ functions of a class to another class ,DI can be performed onlt b/w component and 
+           service or component and predefined class in angular.DI is performed inside constructor argument of a class
+           - syntax : constructor(access-specifiers variable-name:dependent -class-name){}
+
+       15. Asynchronous function handling in TypeScript : using 'Observable' to handle Asynchronous functions,
+           Observable can resolve multiple Asynchronous function at a time where as promise can only resolve one function at a time.
+           Angular RxJS library is used to resolve Asynchronous function.
+              - To resolve Observable to get response angular uses 'subscribe' method,subscribe method argument can be of 2 types,
+                callback function where its argument will give you the response.otherwise we can use object,its next key value will give you 
+                success response,error key value will give server error response.
+
+       16. API call : use 'HttpClient' class methods will return Observable
+           - import 'provideHttpClient' in app.config.ts file, also provide the same
+
+       17. Interface : used to define custom type of data in project, command - ng g i folder-name/Interface-name
+
+       18. Angular component lifecycle Hooks / Methods : we can use Hooks inside component without importing
+           - there are 4 cycle phases,
+             1. Creation phases
+             2. Change Detection phase :
+               - ngOnInit : Runs once after Angular has initialized all the component Inputs
+               - ngOnChanges : Runs every Time this component's inputs have changed.
+               - ngDoCheck : Runs whenever Angular checks the component for changes.
+               - ngAfterContentInit : Runs once after the component's content has been initialized.
+               - ngAfterContentChecked : Runs every time this component content has been checked for changes
+               - ngAfterViewInit : Runs every time this component content has been checked for changes.
+               - ngAfterViewChecked : Runs every time the component's view has been checked for changes
+             3. Rendering Phase : 
+                - afterNextRener : Runs once the next time that all components have been rendered to the DOM.
+                - afterRender : 	Runs every time all components have been rendered to the DOM.
+             4. Destruction Phase :
+                - ngOnDestroy : Runs once before the component is destroyed.
+
+       19. setup path / route for component in Angular
+           - Define path  for component inside app.routes.ts file
+           - Add component path in routes array as object 
+             - syntax : { path:"component-path" , component:component-name }
+           - use router-outlet selector in root component html page insorder to swicth pages according url 
+           - routerLink proprerty is used to redirect from one html to another in angular app without refreshing page
+
+
+
+
+
+
+
+
+         20. Form handling in Angular :-
+            - Template driven forms : first design html part of form , getting form data TO Component properties, use ngForm, 
+              ngModel Directives to manage template driven forms
+            - Model driven forms
